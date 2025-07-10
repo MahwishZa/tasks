@@ -105,6 +105,11 @@ img {
     gap: 1.5rem;
 }
 
+.navbar-button-container i {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
 /* Footer */
 .footer {
     padding: 2rem;
