@@ -4,6 +4,10 @@
 
 Defined table via HTML and CSS
 
+File: test.html
+
 **Task 2**
 
 Created a webpage via HTML, CSS, & JavaScript
+
+Folder: webpage
