@@ -139,6 +139,16 @@
         .dark-mode h1 {
             color: #F3F4F6;
         }
+
+        @media (max-width: 600px) {
+            .contact-form .row {
+                flex-direction: column;
+            }
+
+            .contact-section .container {
+                padding: 1rem;
+            }
+        }
     </style>
 </head>
 
@@ -150,6 +160,7 @@
             <p>
                 I'd love to hear from you! If you have any questions, comments or feedback, please use the form below.
             </p>
+            
             <form class="contact-form" action="#" method="POST">
                 <div class="row">
                     <input type="text" name="name" placeholder="Enter your name" required>
