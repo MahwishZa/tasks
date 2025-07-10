@@ -214,6 +214,42 @@
         .dark-mode .tool-item {
             border: 1px solid #F3F4F6;
         }
+
+        @media (max-width: 768px) {
+            .about-section {
+                grid-template-columns: 1fr;
+                padding: 1rem;
+            }
+
+            .user {
+                order: 1;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            .about-content {
+                order: 2;
+            }
+
+            .info-cards {
+                flex-direction: column;
+            }
+
+            .tool-list {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .tool-item {
+                width: 48px;
+                height: 48px;
+                font-size: 1.2rem;
+            }
+
+            .about-header h2 {
+                font-size: 2rem;
+            }
+        }
     </style>
 </head>
 
@@ -278,7 +314,6 @@
                 document.body.classList.toggle('dark-mode', mode === 'dark');
             }
         });
-
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme === 'dark') {
             document.body.classList.add('dark-mode');
