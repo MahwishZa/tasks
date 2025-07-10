@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliana Jade</title>
+    <link href="stylesheet.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="navbar-container">
+            <div class="logo">eliana<span class="highlight">.</span></div>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About me</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">My Work</a></li>
+                    <li><a href="#contact">Contact me</a></li>
+                </ul>
+            </nav>
+            <div class="navbar-button-container">
+                <i class="fa-solid fa-moon toggle-theme" aria-hidden="true"></i>
+                <i class="fa-solid fa-sun toggle-theme" aria-hidden="true" style="display: none;"></i>
+                <a href="#contact" class="navbar-button">Contact Me</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <main>
+        <iframe id="home" src="hero.html" width="100%" height="800px" style="border:none;"></iframe>
+        <iframe id="about" src="about.html" width="100%" height="800px" style="border:none;"></iframe>
+        <iframe id="services" src="services.html" width="100%" height="600px" style="border:none;"></iframe>
+        <iframe id="portfolio" src="portfolio.html" width="100%" height="1200px" style="border:none;"></iframe>
+        <iframe id="contact" src="contact.html" width="100%" height="800px" style="border:none;"></iframe>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="logo" style="font-size: 3rem;">eliana<span class="highlight">.</span></div>
+            <div class="email">
+                <span class="icon">&#9993;</span>
+                <a href="mailto:eliana@example.com">eliana@example.com</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="bottom-content">
+                <span>© 2024 Eliana Jade. All rights reserved.</span>
+                <div class="social-links">
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const toggleButton = document.querySelector('.fa-moon');
+        const body = document.body;
+        const iframes = document.querySelectorAll('iframe');
+
+        function toggleDarkMode() {
+            body.classList.toggle('dark-mode');
+            const mode = body.classList.contains('dark-mode') ? 'dark' : 'light';
+            localStorage.setItem('theme', mode);
+
+            // Send mode to iframes
+            iframes.forEach(iframe => {
+                iframe.contentWindow.postMessage({ theme: mode }, '*');
+            });
+
+            // Toggle icon
+            toggleButton.classList.toggle('fa-moon');
+            toggleButton.classList.toggle('fa-sun');
+        }
+
+        toggleButton.addEventListener('click', toggleDarkMode);
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                body.classList.add('dark-mode');
+                toggleButton.classList.remove('fa-moon');
+                toggleButton.classList.add('fa-sun');
+            }
+        });
+    </script>
+
+</body>
+
+</html>

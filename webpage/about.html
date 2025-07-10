@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliana Jade</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" rel="stylesheet">
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            color: #0F172A;
+            line-height: 1.5;
+            padding: 2rem;
+        }
+
+        .about-section {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: auto;
+            align-items: center;
+        }
+
+        .about-header {
+            grid-column: 1 / -1;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .about-header .subtitle {
+            max-width: 600px;
+            margin: 0 auto;
+            color: #555;
+        }
+
+        .about-header h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 20px 0;
+            color: #1a1a1a;
+        }
+
+        .user {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin: auto;
+        }
+
+        .user img.photo {
+            width: 100%;
+            border-radius: 1rem;
+            display: block;
+        }
+
+        .user .badge {
+            position: absolute;
+            bottom: -20px;
+            left: 90%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 100px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            text-align: center;
+            color: #0F172A;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .badge .emoji {
+            font-size: 3rem;
+            margin-top: -0.25rem;
+        }
+
+        .badge .top-text {
+            position: absolute;
+            top: 8px;
+            width: 100%;
+            transform: rotate(-25deg);
+        }
+
+        .badge .bottom-text {
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            transform: rotate(-205deg);
+        }
+
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .about-content p.intro {
+            font-size: 1rem;
+            color: #334155;
+            max-width: 1200px;
+        }
+
+        .info-cards {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .info-card {
+            flex: 1;
+            border: 1px solid #CBD5E1;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            text-align: left;
+        }
+
+        .info-card i {
+            width: 32px;
+            height: 32px;
+            color: #334155;
+        }
+
+        .info-card h3 {
+            margin-top: 0.75rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1E293B;
+        }
+
+        .info-card p {
+            margin-top: 0.5rem;
+            color: #475569;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        .info-card:hover {
+            background-color: #fff0f5;
+            transform: translateY(-4px);
+            box-shadow: 5px 5px 0 #000000cc;
+        }
+
+        .tools {
+            margin-top: 2rem;
+        }
+
+        .tools p {
+            font-size: 1rem;
+            color: #1E293B;
+            margin-bottom: 0.5rem;
+        }
+
+        .tool-list {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .tool-item {
+            border: 1px solid #CBD5E1;
+            border-radius: 0.5rem;
+            padding: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 56px;
+            height: 56px;
+            font-size: 1.5rem;
+        }
+
+        .tool-item:hover {
+            transform: translateY(-4px);
+        }
+
+        .dark-mode {
+            background-color: transparent;
+            color: #F3F4F6;
+        }
+
+        .dark-mode .about-header h2,
+        .dark-mode .about-header .subtitle,
+        .dark-mode .info-card h3,
+        .dark-mode .info-card p,
+        .dark-mode .tools p,
+        .dark-mode .info-card i,
+        .dark-mode .about-content p.intro,
+        .dark-mode .user .badge,
+        .dark-mode .user .badge .top-text,
+        .dark-mode .user .badge .bottom-text {
+            color: #F3F4F6;
+        }
+
+        .dark-mode .info-card {
+            border: 1px solid #F3F4F6;
+        }
+
+        .dark-mode .info-card:hover {
+            background-color: #000000cc;
+            box-shadow: 5px 5px 0 #F3F4F6;
+        }
+
+        .dark-mode .tool-item {
+            border: 1px solid #F3F4F6;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="about-section">
+        <div class="about-header">
+            <p class="subtitle">Introduction</p>
+            <h2>About me</h2>
+        </div>
+
+        <div class="user">
+            <img class="photo" src="./assets/user.png" alt="User photo">
+            <div class="badge">
+                <div class="emoji">👩‍💻</div>
+            </div>
+        </div>
+
+        <div class="about-content">
+            <p class="intro">
+                I am an experienced Frontend Developer with over a decade of professional expertise in the field.
+                Throughout my career, I have had the privilege of collaborating with prestigious organizations,
+                contributing to their success and growth.
+            </p>
+
+            <div class="info-cards">
+                <div class="info-card">
+                    <i class="fa-solid fa-code"></i>
+                    <h3>Languages</h3>
+                    <p>HTML, CSS, JavaScript<br>React Js, Next Js</p>
+                </div>
+
+                <div class="info-card">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <h3>Education</h3>
+                    <p>B.Tech in Computer Science</p>
+                </div>
+
+                <div class="info-card">
+                    <i class="fa-solid fa-briefcase"></i>
+                    <h3>Projects</h3>
+                    <p>Built more than 5 projects</p>
+                </div>
+            </div>
+
+            <div class="tools">
+                <p>Tools i use</p>
+                <div class="tool-list">
+                    <i class="devicon-vscode-plain colored tool-item"></i>
+                    <i class="devicon-firebase-plain colored tool-item"></i>
+                    <i class="devicon-mongodb-plain colored tool-item"></i>
+                    <i class="devicon-figma-plain colored tool-item"></i>
+                    <i class="devicon-git-plain colored tool-item"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        window.addEventListener('message', (event) => {
+            if (event.data && event.data.theme) {
+                const mode = event.data.theme;
+                document.body.classList.toggle('dark-mode', mode === 'dark');
+            }
+        });
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.body.classList.add('dark-mode');
+        }
+    </script>
+</body>
+
+</html>

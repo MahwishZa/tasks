@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eliana Jade</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      font-weight: 600;
+      border-radius: 0.375rem;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .btn-outline {
+      color: #333;
+      border: 1px solid #333;
+      padding: 1rem 2rem;
+      border-radius: 3rem;
+      font-weight: 600;
+      background-color: transparent;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 2rem;
+    }
+
+    .btn-outline:hover {
+      background-color: #fff0f5;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .portfolio-image {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 1rem;
+    }
+
+    .portfolio-item {
+      position: relative;
+      border-radius: 1rem;
+      overflow: hidden;
+      background-color: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .portfolio-content {
+      padding: 1rem;
+      text-align: left;
+      position: relative;
+    }
+
+    .portfolio-content h3 {
+      font-weight: 600;
+      color: #1a1a1a;
+      margin-bottom: 0.5rem;
+    }
+
+    .portfolio-content p {
+      margin: 0;
+      font-size: 0.875rem;
+      color: #6b7280;
+    }
+
+    .portfolio-content-button {
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+      padding: 8px 12px;
+      border: 1px solid #000000cc;
+      border-radius: 50px;
+      font-size: 1.5rem;
+      box-shadow: 3px 3px 0 #000000cc;
+      background-color: white;
+      transition: background-color 0.3s;
+    }
+
+    .portfolio-content-button:hover {
+      background: greenyellow;
+    }
+
+    .portfolio-content-button i {
+      color: #000000cc;
+    }
+
+    section {
+      padding: 60px 40px;
+      background-color: transparent;
+      color: #000;
+      text-align: center;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin: 20px 0;
+      color: #1a1a1a;
+    }
+
+    .description {
+      max-width: 600px;
+      margin: 0 auto 40px auto;
+      color: #666;
+    }
+
+    .sub-text {
+      max-width: 600px;
+      margin: 0 auto;
+      color: #555;
+    }
+
+    .dark-mode {
+      background-color: #0F172A;
+      color: #F3F4F6;
+    }
+
+    .dark-mode section {
+      background-color: #0F172A;
+      color: #F3F4F6;
+    }
+
+    .dark-mode .section-title,
+    .dark-mode .description,
+    .dark-mode .sub-text {
+      color: #F3F4F6;
+    }
+
+    .dark-mode .portfolio-content-button {
+      background-color: white;
+      border: 1px solid #000000cc;
+      box-shadow: 3px 3px 0 #000000cc;
+      color: #000000cc;
+    }
+
+    .dark-mode .portfolio-content-button i {
+      color: #000000cc;
+    }
+
+    .dark-mode .portfolio-content-button:hover {
+      background-color: greenyellow;
+    }
+
+    .dark-mode .btn-outline {
+      color: #F3F4F6;
+      border: 1px solid #F3F4F6;
+      background-color: transparent;
+    }
+
+    .dark-mode .btn-outline:hover {
+      background-color: #1E293B;
+      color: #F3F4F6;
+    }
+  </style>
+</head>
+
+<body>
+  <section id="portfolio">
+    <div class="container">
+      <p class="sub-text">My portfolio</p>
+      <h2 class="section-title">My latest work</h2>
+      <p class="description">
+        Explore a collection of projects showcasing my expertise in front-end development.
+      </p>
+      <div class="portfolio-grid">
+        <div class="portfolio-item">
+          <img src="./assets/work1.png" alt="Frontend project preview" class="portfolio-image" />
+          <div class="portfolio-content">
+            <h3 class="portfolio-project-title">Frontend project</h3>
+            <p class="portfolio-category">Web Design</p>
+            <a href="#" class="portfolio-content-button" aria-label="Visit project">
+              <i class="fa-solid fa-location-arrow"></i>
+            </a>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <img src="./assets/work2.png" alt="Geo based app preview" class="portfolio-image" />
+          <div class="portfolio-content">
+            <h3 class="portfolio-project-title">Geo based app</h3>
+            <p class="portfolio-category">Mobile App</p>
+            <a href="#" class="portfolio-content-button" aria-label="Visit project">
+              <i class="fa-solid fa-location-arrow"></i>
+            </a>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <img src="./assets/work3.png" alt="Photography site preview" class="portfolio-image" />
+          <div class="portfolio-content">
+            <h3 class="portfolio-project-title">Photography site</h3>
+            <p class="portfolio-category">Web Design</p>
+            <a href="#" class="portfolio-content-button" aria-label="Visit project">
+              <i class="fa-solid fa-location-arrow"></i>
+            </a>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <img src="./assets/work4.png" alt="UI/UX designing preview" class="portfolio-image" />
+          <div class="portfolio-content">
+            <h3>UI/UX designing</h3>
+            <p>UI/UX Design</p>
+            <a href="#" class="portfolio-content-button" aria-label="Visit project">
+              <i class="fa-solid fa-location-arrow"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-outline">Show more →</button>
+    </div>
+  </section>
+
+  <script>
+    window.addEventListener('message', (event) => {
+      if (event.data && event.data.theme) {
+        const mode = event.data.theme;
+        document.body.classList.toggle('dark-mode', mode === 'dark');
+      }
+    });
+
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark-mode');
+    }
+  </script>
+</body>
+
+</html>

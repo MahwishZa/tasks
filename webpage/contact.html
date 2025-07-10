@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliana Jade</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://hcaptcha.com/1/api.js" async defer></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: radial-gradient(circle, #F3EDFC 0%, #FFFFFF 50%, #FFFFFF 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .contact-section .container {
+            max-width: 700px;
+            width: 100%;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 20px 0;
+            color: #1a1a1a;
+        }
+
+        p {
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+            color: #666;
+        }
+
+        .sub-text {
+            max-width: 600px;
+            margin: 0 auto;
+            color: #555;
+        }
+
+        .contact-form .row {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-family: inherit;
+            color: #555;
+            outline: none;
+        }
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: grey;
+        }
+
+        .contact-form textarea {
+            min-height: 200px;
+            resize: vertical;
+        }
+
+        .captcha-row {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin: 1.5rem 0;
+        }
+
+        .submit-btn {
+            background-color: #18181B;
+            color: #FFF;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            font-size: 1rem;
+            font-family: inherit;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: background-color 0.2s;
+        }
+
+        .submit-btn:hover {
+            background-color: #27272A;
+        }
+
+        .submit-btn .arrow {
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+        .dark-mode {
+            background: #0F172A;
+            color: #F3F4F6;
+        }
+
+        .dark-mode .contact-form input,
+        .dark-mode .contact-form textarea {
+            background-color: #333;
+            color: #F3F4F6;
+        }
+
+        .dark-mode .contact-form input::placeholder,
+        .dark-mode .contact-form textarea::placeholder {
+            color: #666;
+        }
+
+        .dark-mode .submit-btn {
+            background-color: #fff;
+            color: #1a1a1a;
+        }
+
+        .dark-mode .submit-btn:hover {
+            background-color: #F3F4F6;
+        }
+
+        .dark-mode p,
+        .dark-mode .sub-text,
+        .dark-mode h1 {
+            color: #F3F4F6;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="contact-section">
+        <div class="container">
+            <p class="sub-text">Connect with me</p>
+            <h1>Get in touch</h1>
+            <p>
+                I'd love to hear from you! If you have any questions, comments or feedback, please use the form below.
+            </p>
+            <form class="contact-form" action="#" method="POST">
+                <div class="row">
+                    <input type="text" name="name" placeholder="Enter your name" required>
+                    <input type="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <textarea name="message" placeholder="Enter your message" required></textarea>
+                <div class="captcha-row">
+                    <div class="h-captcha" data-sitekey="your_site_key"></div>
+                </div>
+                <button type="submit" class="submit-btn">
+                    Submit now <span class="arrow">→</span>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        window.addEventListener('message', (event) => {
+            if (event.data && event.data.theme) {
+                const mode = event.data.theme;
+                document.body.classList.toggle('dark-mode', mode === 'dark');
+            }
+        });
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.body.classList.add('dark-mode');
+        }
+    </script>
+</body>
+
+</html>
