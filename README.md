@@ -11,3 +11,9 @@ File: test.html
 Created a webpage via HTML, CSS, & JavaScript
 
 Folder: webpage
+
+**Task 3**
+
+Developed website projects via HTML, CSS, & JavaScript
+
+Folder: JavaScript
